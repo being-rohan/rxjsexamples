@@ -1,0 +1,23 @@
+<div>
+    <h2>Weather Updates</h2>
+  
+    <!-- Fetch historical weather -->
+    <button class="btn btn-primary" (click)="fetchWeather('New York')">Fetch Weather (New York)</button>
+    <button  class="btn btn-primary ml-4" (click)="fetchWeather('London')">Fetch Weather (London)</button>
+  
+    <!-- Historical Weather -->
+    <div *ngIf="historicalWeather">
+      <h3>Historical Weather</h3>
+      <ul>
+        <li *ngFor="let weather of historicalWeather">{{ weather }}</li>
+      </ul>
+    </div>
+  
+    <!-- Live Updates -->
+    <div>
+      <h3>Live Weather Updates</h3>
+      <ul>
+        <li *ngFor="let update of liveUpdates">{{ update }}</li>
+      </ul>
+    </div>
+  </div>

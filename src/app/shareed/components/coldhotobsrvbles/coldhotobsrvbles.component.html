@@ -1,0 +1,26 @@
+<!-- <!-- // cold observbles == --A Cold Observable is an Observable
+   that does not start emitting values until it is subscribed to. Each subscription
+    to a Cold Observable creates an independent 
+  execution of the Observable, meaning every subscriber gets its own separate stream of data > -->
+  
+
+
+  <div>
+    <h2>Stock Tracker</h2>
+    <button class="btn btn-primary" (click)="fetchStock('AAPL')">Fetch Apple (AAPL)</button>
+    <button class="btn btn-primary" (click)="fetchStock('GOOG')">Fetch Google (GOOG)</button>
+  
+    <div *ngIf="historicalPrices">
+      <h3>Historical Prices</h3>
+      <ul>
+        <li *ngFor="let price of historicalPrices">{{ price }}</li>
+      </ul>
+    </div>
+  
+    <div>
+      <h3>Real-Time Updates</h3>
+      <ul>
+        <li *ngFor="let update of liveUpdates">{{ update }}</li>
+      </ul>
+    </div>
+  </div>
